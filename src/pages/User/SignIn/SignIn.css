@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
+.bg{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
+    margin-top: 50px;
+    font-family: 'Nunito', sans-serif;
+    border: 2px solid black;
+}
+
+
+.bttn{
+   background-color:  #FF5F1F;
+   padding: 8px 12px;
+   color: white;
+   border: none;
+   font-weight: bolder !important;
+   margin-top: 7px;
+}
+
+.sign{
+    color: black;
+    font-size: 15px;
+    font-weight: bold !important;
+    text-decoration: none;
+}

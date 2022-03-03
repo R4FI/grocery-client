@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+.imgcarosel1{
+    /* background: #FFEFBA; 
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA); 
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);  */
+    background: #FFAFBD;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 35px;    
+
+}
+.imgcarosel1 h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+
+}
+.imgcarosel1 h4{
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+
+}
+.imgcarosel1 p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+.imgcarosel2{
+    background: #D1913C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD194, #D1913C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD194, #D1913C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 35px;    
+    
+
+}
+
+.imgcarosel3{
+    background: #F2994A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+padding: 35px;    
+}
+
+.imgcarosel2 h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+
+}
+.imgcarosel2 h4{
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+
+}
+.imgcarosel2 p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+
+.imgcarosel3 h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+
+}
+.imgcarosel3 h4{
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+
+}
+.imgcarosel3 p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+
+}

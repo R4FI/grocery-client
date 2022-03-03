@@ -1,0 +1,8 @@
+.btttn{
+
+    background-color: tomato !important;
+    border: none !important;
+    padding: 10px 15px; 
+    color: white;
+    font-weight: 500;
+}
