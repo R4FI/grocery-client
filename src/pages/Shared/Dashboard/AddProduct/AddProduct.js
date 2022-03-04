@@ -8,7 +8,7 @@ import Spices from '../Spices/Spices';
 const AddProduct = () => {
     return (
         <div>
-              <FruitVeg></FruitVeg>
+            <FruitVeg></FruitVeg>
             <Bakery></Bakery>
             <Cosmetics></Cosmetics>
             <Spices></Spices>

@@ -9,12 +9,12 @@ const Header = () => {
         <div>
             <Navbar bg="light" collapseOnSelect className="bgnav"  expand="lg" variant="light">
     <Container>
-    <Navbar.Brand href="#home">GS</Navbar.Brand>
+    <Navbar.Brand as={Link} to={"/home"}>GS</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="m-auto nav-text">
       <Nav.Link className="nav-text" as={Link} to={"/home"}>Home</Nav.Link>
-      <NavDropdown className="droptittle" title="Products" id="basic-nav-dropdown">
+      <NavDropdown className="droptittle ms-3" title="Products" id="basic-nav-dropdown">
       <NavDropdown.Item className="nav-text2" as={Link} to={"/fruits&veg"} href="#action/3.1">Fruits & Vagetable</NavDropdown.Item>
                 <NavDropdown.Divider />
       <NavDropdown.Item className="nav-text2" as={Link} to={"/bakery"}  href="#action/3.1">Bakery</NavDropdown.Item>
@@ -23,15 +23,9 @@ const Header = () => {
                 <NavDropdown.Divider />
       <NavDropdown.Item className="nav-text2" as={Link} to={"/cosmetics"} href="#action/3.1">Cosmetics</NavDropdown.Item>
                 <NavDropdown.Divider />
-      <NavDropdown.Item className="nav-text2" as={Link} to={"/kithcen"} href="#action/3.1">Kitchen</NavDropdown.Item>
-            
-          
-          
+      <NavDropdown.Item className="nav-text2" as={Link} to={"/kithcen"} href="#action/3.1">Kitchen</NavDropdown.Item>       
       </NavDropdown> 
-      {/* <Nav.Link className="nav-text" as={Link} to={"/products"}>Products</Nav.Link> */}
-      <Nav.Link className="nav-text" as={Link} to={"/cart"}>Cart</Nav.Link>
-      <Nav.Link className="nav-text" as={Link} to={"/contact"}>Contact</Nav.Link>      
-      <Nav.Link className="nav-text" as={Link} to={"/about"}>About Us</Nav.Link>    
+      <Nav.Link className="nav-text ms-3" as={Link} to={"/about"}>About Us</Nav.Link>    
  
       { 
      

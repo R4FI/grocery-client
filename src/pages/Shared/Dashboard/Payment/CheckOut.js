@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   CardElement, useElements, useStripe
 } from '@stripe/react-stripe-js';
-import { Container } from 'react-bootstrap';
+import {  Container } from 'react-bootstrap';
 import './Checkout.css';
-const CheckOut = () => {
+import useAuth from '../../../../hooks/useAuth';
+import CircularProgress from '@mui/material/CircularProgress';
+
+const CheckOut = ({payment}) => {
   const stripe = useStripe();
   const elements = useElements();
+  const [clientSecret, setClientSecret] = useState('');
+  const {price,name,_id} = payment;
+  const [error,setError] = useState('');
+  const {user} = useAuth();
+  const [success,setSuccess] = useState('');
+  const [processing, setProcessing] = useState(false);
+  useEffect(()=>{
+    fetch('http://localhost:5000/create-payment-intent',{
+    method : 'POST',
+    headers :{
+      'content-type' : 'application/json'
+    },
+      body : JSON.stringify({price})
+    })
+      .then(res => res.json())
+      .then(data => setClientSecret(data.clientSecret));
 
+  },[price]);
 
     const handleSubmit = async(e) =>{
       e.preventDefault();  
@@ -19,17 +39,64 @@ const CheckOut = () => {
       if (card == null) {
         return;
       }
+      setProcessing(true);
       // Use your card Element with other Stripe.js APIs
-    const {error, paymentMethod} = await stripe.createPaymentMethod({
+    const {paymentMethod} = await stripe.createPaymentMethod({
       type: 'card',
       card
     });
 
     if (error) {
-      console.log(error);
+      setError(error.message);
+      setSuccess('');
     } else {
-      console.log(paymentMethod);
+        setError(error.message);
+        console.log(paymentMethod);
     }
+    // payment intent
+    const {paymentIntent, error:intentError} = await stripe.confirmCardPayment(
+      clientSecret,
+      {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: name,
+            email : user.email,
+          },
+        },
+      },
+    );
+
+    if(intentError){
+      setError(intentError.message);
+      setSuccess('');
+    }
+
+    else{
+      setError('');
+      setSuccess('Payment Successful')
+      console.log(paymentIntent);
+      setProcessing(false);
+      
+
+      // save to database
+      const payment = {
+        amount: paymentIntent.amount,
+        transaction: paymentIntent.client_secret.slice('_secret')[0],
+        created : paymentIntent.created
+      }
+      const url =`http://localhost:5000/orders/${_id}`;
+      fetch(url, {
+        method : 'PUT',
+        headers:{
+            'content-type' : 'application/json'
+        },
+        body : JSON.stringify(payment)
+      })
+        .then(res=>res.json())
+        .then(data=> console.log(data))
+    }
+
     }
     return (
       <Container>
@@ -50,10 +117,14 @@ const CheckOut = () => {
           },
         }}
       />
-      <button className="btttn3 mt-5" type="submit" disabled={!stripe}>
+    { processing? <CircularProgress/> :
+        <button className="btttn3 mt-5" type="submit" disabled={!stripe || success}>
         Pay 
       </button>
+    }
     </form>
+    {error && <p style={{color:'red'}}> {error}</p> }
+    {success && <p style={{color:'green'}}> {success}</p>  }
     </Container>
     );
 };

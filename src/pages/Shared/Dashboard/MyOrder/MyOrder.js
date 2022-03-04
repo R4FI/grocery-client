@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 import './MyOrder.css';
 const MyOrder = () => {
-    const [orders,setOrders] = useState([]);
+    const [order,setOrder] = useState([]);
     const {user} = useAuth();
     useEffect(() => {
         fetch(`http://localhost:5000/orders?email=${user.email}`)
             .then(res => res.json())
-            .then(data => setOrders(data));
+            .then(data => setOrder(data));
     }, [user.email]);
 
 
@@ -25,8 +25,8 @@ const MyOrder = () => {
                 .then(data => {
                     if (data.deletedCount) {
                         alert('Deleted Successfully')
-                        const remainingOrder = orders.filter(order => order._id !== id);
-                        setOrders(remainingOrder);
+                        const remainingOrder = order.filter(order => order._id !== id);
+                        setOrder(remainingOrder);
                     }
                 });
         }
@@ -35,8 +35,8 @@ const MyOrder = () => {
 
     return (
         <div>
-            <h3>Products You Ordered :{orders.length}</h3>
-          {orders?.map((order)=>(
+            <h3>Products You Ordered :{order.length}</h3>
+          {order?.map((order)=>(
 
          
             <Box >
@@ -61,7 +61,8 @@ const MyOrder = () => {
               <Button  onClick={() => handleDeleteOrder(order._id)}>
                 Delete
               </Button> <br/>
-              <Button>{order.payment? 'Paid':
+
+              <Button>{order.payment ? 'Paid' :
               
               <Link to={`/dashboard/paylink/${order._id}`}>Pay Now</Link>
               }</Button>

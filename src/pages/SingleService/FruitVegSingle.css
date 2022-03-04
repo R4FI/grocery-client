@@ -1,17 +1,19 @@
 *{
     box-sizing: border-box;
 }
-.offer-card{
-    height: 520px;
-    width: 300px;
-    margin:15px;
-    box-shadow: 3px 6px 10px lightgray ;
-    transition: 0.5s;
+
+
+.cardimg{
+
+    height: 50%;
+    width: 65%;
+    margin: auto;
 }
-.offer-img img{
-    width:75% !important;
-    height: 75% !important;
-}
-.offer-info{
-    padding: 5px;
+.btnbuy{
+    background-color: rgb(236, 91, 39) !important;
+    border: none;
+    padding: 6px 16px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
 }

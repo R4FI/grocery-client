@@ -1,8 +1,9 @@
-.btttn{
-
+.btttnexplore{
     background-color: tomato !important;
     border: none !important;
-    padding: 10px 15px; 
+    padding: 10px 17px; 
     color: white;
     font-weight: 500;
+    border-radius: 8px;
 }
+

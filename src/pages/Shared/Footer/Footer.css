@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 .bgfooter{
     background-color: black;
     padding: 50px !important;
     font-family: 'Dongle', sans-serif !important;
     font-size: 35px !important;
     font-weight: 300 !important;
+}
+
+.bgfooter h1{
+    font-family: 'Lobster', cursive;
+    font-size: 35px !important;
+    font-weight: 400;
 }

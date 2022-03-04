@@ -12,7 +12,7 @@ const Bakery = () => {
     return (
         <div>
             <Header></Header>
-                 <div id="services">
+                 <div >
             <h2 className="text-primary mt-5">Bakery</h2>
             <Container>
             <div className="row g-4">

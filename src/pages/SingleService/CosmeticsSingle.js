@@ -1,30 +1,27 @@
 import React from 'react';
+import { Card, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './CosmeticsSingle.css';
 const CosmeticsSingle = ({service}) => {
     const { _id, name,price, description, rating, image } = service;
     return (
         <div className="col-lg-3 col-md-3 col-12">
-             <div >
-            <div className="offer-card">
-                <div className="offer-img">
-                    <img src= {image} alt="" />
-                </div>
-                <div className="offer-info">
-                    <h4>{name}</h4>
-                    <p>Price ${price}</p>
-                    <p><small>Rating:{rating}</small></p>
-                    <p>{description}</p>
-                </div>
-                <div className="booking-btn">
-                    <Link to={`/placeorder/${_id}`}>
-                        <button className="btn btn-primary">Book Now</button>
-                    </Link>
-
-                </div>
-
-            </div>
-        </div>
+            <Container>
+            <Card style={{ width: '18rem' , height:'25rem' }}>
+  <Card.Img variant="top" src={image}  className="cardimg"/>
+  <Card.Body>
+    <Card.Title>{name}</Card.Title>
+    <Card.Text>
+                    <h5 style={{textAlign:'left'}}>Price ${price}</h5>
+                    <h5 style={{textAlign:'left'}}><small>Rating:{rating}</small></h5>
+                    <h5 style={{textAlign:'left'}}>{description}</h5>
+              </Card.Text>
+             <Link to={`/placeorder/${_id}`}>
+              <button className="btnbuy">Buy Now</button>
+            </Link>
+              </Card.Body>
+            </Card>
+        </Container>
         </div>
     );
 };

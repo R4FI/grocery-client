@@ -34,11 +34,16 @@ const Footer = () => {
                 <Col md={4}>
                     <h1 style={{textAlign: "left"}} className="text-white" >Address</h1>
                     <p className= "text-white" style={{textAlign: "left"}}><FontAwesomeIcon  icon={faMapMarkedAlt}/> Broaddus Maple Court,Madsinvile KY 4783,USA</p>
-                    <p className= "text-white" style={{textAlign: "left"}}>+8801734181970</p>
+                    <p className= "text-white" style={{textAlign: "left"}}>+1-202-555-0136</p>
                     <p className= "text-white" style={{textAlign: "left"}}>info@email.com</p>
                 </Col>
             </Row>
+            <hr className="w-75 mt-5 mb-5 text-white m-auto"/>
             </Container>
+                   
+
+                    <p className="text-white fw-4 fs-4">© All Rights Are Reserved.</p>
+
         </div>
     );
 };

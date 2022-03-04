@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
+
 
 const ManageOrder = () => {
     const [allOrders, setAllOrders] = useState([]);
-
     useEffect(() => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [allOrders]);
+
+
 
     // delete
     const handleDeleteOrder = id => {
@@ -47,8 +49,7 @@ const ManageOrder = () => {
                                 <th>Phone</th>
                                 <th>Date</th>
                                 <th>Address</th>
-                               
-                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         {allOrders?.map((order, index) => (
@@ -62,13 +63,12 @@ const ManageOrder = () => {
                                     <td>{order?.createdAt}</td>
                                     <td>{order?.Address}</td>
                                     
-                                    {/* <td><span className="status">{order?.status}</span></td> */}
+                                    
+
                                     <button
                                         onClick={() => handleDeleteOrder(order._id)}
                                        
                                         className="btn btn-danger delete-btn px-3 py-2">Delete</button>
-                                  
-                                        {/* <button onClick={()=>handleUpdate(order._id)} className="btn btn-danger delete-btn px-3 py-2">Update</button> */}
                                 </tr>
                                
                             </tbody>

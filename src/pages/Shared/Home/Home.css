@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 .imgcarosel1{
-    /* background: #FFEFBA; 
-    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA); 
-    background: linear-gradient(to right, #FFFFFF, #FFEFBA);  */
     background: #FFAFBD;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -82,4 +79,85 @@ padding: 35px;
     font-size: 30px;
     font-weight: 500;
 
+}
+
+
+body{
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* responsive */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .bgcarousel{
+        
+        height: 85vh !important;
+        width: 100vw;
+    }
+    .bgcarousel img{
+        
+        margin-top: 25px !important;
+       
+    }
+
+    .text{
+        margin-top: 25px !important;
+     
+    }
+    
+}
+@media only screen and (min-width: 600px) {
+    .bgcarousel{
+        
+        height: 90vh;
+        width: 100vw;
+    }
+    .bgcarousel img{
+        
+        margin-top: 25px !important;
+       
+    }
+
+    .text{
+        margin-top: 25px !important;
+        
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .bgcarousel{
+        height: 90vh;
+        width: 100vw;
+        
+    }
+}
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .bgcarousel{
+        height: 90vh;
+        width: 100vw;
+       
+    }
+}
+
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    .bgcarousel{
+        height: 85vh !important;
+        width: 100vw;
+    }
+
+    .bgcarousel img{
+        margin-top: 50% !important;
+        margin-bottom: 50% !important;
+    }  
+
+    .text{
+        top: 50% !important;
+        bottom: 50% !important;
+    }
 }

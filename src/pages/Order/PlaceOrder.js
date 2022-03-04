@@ -81,8 +81,8 @@ const PlaceOrder = () => {
                                     <input  defaultValue={user.displayName} {...register("name")} />
                                     <input  defaultValue={orderDetails?.name} {...register("bookname")} required />
                                     <input  defaultValue={user.email} placeholder="Email" {...register("email", )} required/>
-                                    <input  defaultValue={orderDetails?.price} placeholder="price" {...register("price", )} required/>
-                                    <input  placeholder="phone number" defaultValue="" required {...register("phone")}/>
+                                    <input  defaultValue={orderDetails?.price} placeholder="price" {...register("price" )} required/>
+                                    <input  placeholder="phone number" defaultValue="" required {...register("phone", {max:11})}/>
                                     <input type="text" {...register("Address")} required placeholder="Address"/> 
                                     <input type="submit" value="Place Order" />
                                 </form>

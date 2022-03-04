@@ -14,6 +14,8 @@ const stripePromise = loadStripe('pk_test_51KYs7CKJTqhSIZhtcetUelsLVOWJmgxRIZjBM
 const Payment = () => {
     const {orders} = useParams();
     const [payment,setPayment] = useState({});
+   
+
     useEffect(() => {
         fetch(`http://localhost:5000/orders/${orders}`)
             .then(res => res.json())
@@ -23,14 +25,18 @@ const Payment = () => {
     return (
         <div>
           <Container className="payment">
-            <h2 style={{textAlign:'left'}}>Please Pay For : {orders}</h2>
             <h3 style={{textAlign:'left'}}>Product Name: {payment.bookname}</h3>
             <h3 style={{textAlign:'left'}} className="mb-5">Pay: ${payment.price}</h3>
-            <Elements stripe={stripePromise}>
-            <CheckOut 
-              payment={payment}
-            />
-             </Elements>
+      
+            {
+              payment?.price && 
+              <Elements stripe={stripePromise}>
+              <CheckOut 
+               payment={payment}
+              />
+               </Elements>
+            }
+          
              </Container>
         </div>
     );
