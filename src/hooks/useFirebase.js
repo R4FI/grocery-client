@@ -92,8 +92,31 @@ const useFirebase = () => {
           setIsLoading(false);
       });
 
-      return ()=> unSubs
-    },[])
+      return ()=> unSubs;
+    },[auth])
+
+     
+    // save user
+    const saveUser = (email,displayName,method) => {
+      const user = {email,displayName};
+      fetch('http://localhost:5000/users',{
+        method: method,
+        headers:{
+          'content-type' : 'application/json'
+        },
+        body : JSON.stringify(user)
+      })
+
+      .then()
+
+    }
+      // admin
+      useEffect(()=>{
+        fetch(`http://localhost:5000/users/${user.email}`)
+        .then(res=> res.json())
+        .then(data => setAdmin(data.admin))
+
+      },[user.email])
 
 
 
@@ -109,28 +132,7 @@ const useFirebase = () => {
     
   }
 
-      // admin
-      useEffect(()=>{
-        fetch(`http://localhost:5000/users/${user.email}`)
-        .then(res=> res.json())
-        .then(data => setAdmin(data.admin))
-
-      },[user.email])
-
-    // save user
-    const saveUser = (email,displayName,method) => {
-      const user = {email,displayName};
-      fetch('http://localhost:5000/users',{
-        method: method,
-        headers: {
-          'content-type' : 'applicaton/json'
-        },
-        body : JSON.stringify(user)
-      })
-
-      .then()
-
-    }
+   
 
 return {
   user,

@@ -50,6 +50,7 @@ const ManageOrder = () => {
                                 <th>Date</th>
                                 <th>Address</th>
                                 <th>Action</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         {allOrders?.map((order, index) => (
@@ -62,6 +63,9 @@ const ManageOrder = () => {
                                     <td>{order?.phone}</td>
                                     <td>{order?.createdAt}</td>
                                     <td>{order?.Address}</td>
+                                    <td>{order.payment? 'Done' :
+                                        'Due'
+                                    }</td>
                                     
                                     
 

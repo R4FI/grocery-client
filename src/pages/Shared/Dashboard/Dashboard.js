@@ -182,9 +182,9 @@ export default function Dashboard() {
         </Typography>
 
        
-        <AdminRoute exact path= {`${path}/makeAdmin`}>
+        <Route exact path= {`${path}/makeAdmin`}>
         <MakeAdmin></MakeAdmin>
-        </AdminRoute>
+        </Route>
         <AdminRoute exact path= {`${path}/manageProduct`}>
           <ManageProduct></ManageProduct>
         </AdminRoute>

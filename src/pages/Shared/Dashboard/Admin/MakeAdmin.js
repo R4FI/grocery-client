@@ -4,8 +4,10 @@ import { Alert } from '@mui/material';
 const MakeAdmin = () => {
     const [email,setEmail] = useState('');
     const [success,setSuccess] = useState(false);
+   
     const handleOnBlur = e =>{
         setEmail(e.target.value)
+        
     }
 
     const handleAdmin = e =>{
@@ -21,6 +23,7 @@ const MakeAdmin = () => {
         .then(data=>{
             if(data.modifiedCount){
                 setSuccess(true);   
+                console.log(data);
             }
         })
       

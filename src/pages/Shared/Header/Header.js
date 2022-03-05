@@ -41,7 +41,7 @@ const Header = () => {
 
         <Navbar.Text className="ms-3">
                             {user?.email &&
-                                <span className="m-auto">{user.displayName}</span>
+                                <span className="m-auto">{user?.displayName}</span>
                             }
                             <span><img className="profile ms-3" src={user?.photoURL} alt="" /></span>
 
